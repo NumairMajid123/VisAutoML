@@ -2,10 +2,10 @@
     "$schema": "https://railway.app/railway.schema.json",
     "build": {
         "builder": "RAILPACK",
-        "buildCommand": "cd Backend && pip install --no-cache-dir -r requirements.txt"
+        "buildCommand": "/bin/sh -c 'python3.9 -m pip install --no-cache-dir -r Backend/requirements.txt'"
     },
     "deploy": {
-        "startCommand": "cd Backend && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn VisAutoML.wsgi:application",
+        "startCommand": "/bin/sh -c 'cd Backend && python3.9 manage.py migrate && python3.9 manage.py collectstatic --noinput && gunicorn VisAutoML.wsgi:application'",
         "restartPolicyType": "ON_FAILURE",
         "restartPolicyMaxRetries": 10
     }
