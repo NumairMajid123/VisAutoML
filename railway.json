@@ -2,7 +2,7 @@
     "$schema": "https://railway.app/railway.schema.json",
     "build": {
         "builder": "RAILPACK",
-        "buildCommand": "cd Backend && pip install -r requirements.txt"
+        "buildCommand": "cd Backend && pip install --no-cache-dir -r requirements.txt"
     },
     "deploy": {
         "startCommand": "cd Backend && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn VisAutoML.wsgi:application",
