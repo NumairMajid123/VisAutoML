@@ -4,7 +4,7 @@
         "builder": "NIXPACKS"
     },
     "deploy": {
-        "startCommand": "cd Backend && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn your_app_name.wsgi",
+        "startCommand": "cd Backend && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn VisAutoML.wsgi",
         "restartPolicyType": "ON_FAILURE",
         "restartPolicyMaxRetries": 10
     }
