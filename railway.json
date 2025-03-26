@@ -2,7 +2,7 @@
     "$schema": "https://railway.app/railway.schema.json",
     "build": {
         "builder": "RAILPACK",
-        "buildCommand": "/bin/sh -c 'apt-get update && apt-get install -y python3.9 python3.9-venv python3.9-distutils && ln -sf /usr/bin/python3.9 /usr/bin/python3 && python3 -m ensurepip --upgrade && python3 -m pip install --upgrade pip && python3 -m pip install --no-cache-dir -r Backend/requirements.txt'"
+        "buildCommand": "/bin/sh -c 'apt-get update && apt-get install -y python3 python3-pip && python3 -m ensurepip --upgrade && python3 -m pip install --upgrade pip && python3 -m pip install --no-cache-dir -r Backend/requirements.txt'"
     },
     "deploy": {
         "startCommand": "/bin/sh -c 'cd Backend && python3 manage.py migrate && python3 manage.py collectstatic --noinput && gunicorn VisAutoML.wsgi:application --bind 0.0.0.0:$PORT'",
