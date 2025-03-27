@@ -1,7 +1,7 @@
 {
     "$schema": "https://railway.app/railway.schema.json",
     "build": {
-        "builder": "cd Backend && NIXPACKS"
+        "builder": "NIXPACKS"
     },
     "deploy": {
         "startCommand": "cd Backend && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn VisAutoML.wsgi",
